@@ -28,7 +28,7 @@ async function injectScript(jsFileUrl, callback) {
     console.error(`Failed to load script from ${jsFileUrl}`);
   });
 
-  script.src = await serveRemoteFileAsUrl(jsFileUrl, `text/javascript`);
+  script.src = jsFileUrl//await serveRemoteFileAsUrl(jsFileUrl, `text/javascript`);
 
   if (callback && typeof callback === 'function') {
     script.addEventListener("load", () => {
